@@ -113,11 +113,11 @@ export default function AgeForm() {
 
 
     let y = Math.floor(newDateDiff.years());
-
-
-    let m = newDateDiff.months();
-    if (y >= 1)
+    
+    let m = Math.ceil(newDateDiff.months());
+    if (y >= 1) {
       m %= (y * 12);
+    }
     m = Math.floor(m);
 
 
