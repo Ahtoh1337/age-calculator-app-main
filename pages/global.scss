@@ -1,0 +1,52 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: Poppins;
+  src: url(../public/fonts/Poppins-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(../public/fonts/Poppins-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(../public/fonts/Poppins-Italic.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: Poppins;
+  src: url(../public/fonts/Poppins-BoldItalic.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+:root {
+  font-size: 15px;
+}
+
+@media screen and (max-width: $layout-breakpoint) {
+  :root {
+    font-size: 2.3vw;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: $color-off-white;
+  box-sizing: border-box;
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#__next {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
