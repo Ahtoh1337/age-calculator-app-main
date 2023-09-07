@@ -44,6 +44,10 @@
       appearance: textfield;
       -moz-appearance: textfield;
 
+      &:focus {
+        outline-color: $color-purple;
+      }
+
       &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
