@@ -1,4 +1,4 @@
-import DateDiff from "date-diff";
+import DateDiff from '../lib/date-diff';
 import { useEffect, useState } from "react";
 import styles from './ageForm.module.scss';
 
@@ -114,19 +114,23 @@ export default function AgeForm() {
 
     let y = Math.floor(newDateDiff.years());
     
-    let m = Math.ceil(newDateDiff.months());
-    if (y >= 1) {
-      m %= (y * 12);
-    }
-    m = Math.floor(m);
-
+    let m = Math.floor(newDateDiff.months());
 
     const monthDiff = new DateDiff(
       new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-      new Date(enteredDate.getFullYear(), enteredDate.getMonth(), 1)
-      )
-    
-    const d = Math.floor(Math.abs(newDateDiff.days() - monthDiff.days()));
+      new Date(currentDate.getFullYear(), currentDate.getMonth() - m, 1)
+    )
+
+    const d = Math.floor(newDateDiff.days() - monthDiff.days());
+
+    if (y >= 1) {
+      m %= (y * 12);
+    }
+
+    if (m === 12) {
+      y += 1;
+      m = 0;
+    }
     
     
     setDateDiff({d, m, y})
